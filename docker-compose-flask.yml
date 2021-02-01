@@ -1,0 +1,13 @@
+version: '3'
+services:
+ myflaskapi:
+    build: ./flask
+    ports:
+     - "3000:3000"
+    restart: always
+  nginx: 
+    build: ./nginx 
+    ports: 
+      - "80:80" 
+    links: 
+     - myflaskapi
